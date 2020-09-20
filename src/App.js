@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import Deck from './components/deck'
+import './App.css'
 
-function App() {
+function App () {
+  const workerData = [
+    {
+      name: 'Pete Mitchel',
+      role: 'Stunt Double',
+      liked: null,
+      rate: '100',
+      location: 'London',
+      picUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/42/The_ROCK.jpg'
+    }, {
+      name: 'Daniel Dare',
+      role: 'Stunt Double',
+      liked: null,
+      rate: '95',
+      location: 'Machester',
+      picUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Ryan_reynolds.jpg'
+    }, {
+      name: 'Susan Spielberg',
+      role: 'Stunt Double',
+      liked: null,
+      rate: '105',
+      location: 'Brighton',
+      picUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Sandra_Bullock_Cannes.jpg'
+    }
+  ]
+
+  const [workers, setWorkers] = useState(workerData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Deck />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
