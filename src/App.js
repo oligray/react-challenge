@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Deck from './components/deck'
-import './App.css'
 
 function App () {
   const workerData = [
@@ -31,9 +30,7 @@ function App () {
   const [workers, setWorkers] = useState(workerData);
 
   return (
-    <div className="App">
       <Deck />
-    </div>
   )
 }
 

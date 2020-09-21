@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
-import Deck from './components/deck';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Deck />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
