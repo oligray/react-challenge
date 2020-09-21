@@ -3,9 +3,8 @@ import data from './api/data'
 import Deck from './components/deck'
 
 function App () {
-
   return (
-      <Deck data={data}/>
+    <Deck data={data}/>
   )
 }
 

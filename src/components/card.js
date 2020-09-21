@@ -4,7 +4,6 @@ import { animated, interpolate } from "react-spring";
 import './card.scss'
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
-
   const { name, role, location, rate, picUrl, liked } = data;
 
   return (
