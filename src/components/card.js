@@ -4,33 +4,28 @@ import { animated, interpolate } from "react-spring";
 import './card.scss'
 
 const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
-  const { name, age, distance, text, picUrl } = data[i];
+
+  const { name, role, location, rate, picUrl, liked } = data;
 
   return (
     <animated.div
-      key={i}
       style={{
         transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`)
       }}
     >
       <animated.div
+        className="card"
         {...bind(i)}
         style={{
           transform: interpolate([rot, scale], trans)
         }}
       >
-        <div className="card">
-          {/* <Carousel>
-            {pics.map((pic, index) => (
-              <img src={pic} key={index} alt="profilePicture" />
-            ))}
-          </Carousel> */}
-            <img draggable="false" src={picUrl} alt="actor pose" style={{align: 'center'}} />
-
-            <h2>{name}</h2>
-          {/* <h2>{age}</h2>
-          <h5>{distance}</h5>
-          <h5>{text}</h5> */}
+        <div className="card-content">
+          <h2>{role} {liked.toString()}</h2>
+          <img draggable="false" src={picUrl} alt="actor pose" style={{align: 'center'}} />
+          <h2>{name}</h2>
+          <h5>{location}</h5>
+          <h5>Hourly rate {rate}</h5>
         </div>
       </animated.div>
     </animated.div>
@@ -39,10 +34,10 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
 
 Card.propTypes = {
   name: string,
-  age: number,
-  distance: string,
-  text: string,
-  pics: array
+  role: string,
+  location: string,
+  rate: string,
+  picUrl: string
 };
 
 export default Card;
