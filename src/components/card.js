@@ -21,7 +21,13 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
         }}
       >
         <div className="card-content">
-          <h2>{role} {liked.toString()}</h2>
+          <h2>
+            {role}  
+            {liked ? 
+              <span role="img" aria-label="liked"> 😀</span> : 
+              <span role="img" aria-label="disliked"> 🙁</span>
+            } 
+          </h2>
           <img draggable="false" src={picUrl} alt="actor pose" style={{align: 'center'}} />
           <h2>{name}</h2>
           <h5>{location}</h5>

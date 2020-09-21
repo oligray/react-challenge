@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import data from './api/data'
 import Deck from './components/deck'
 
 function App () {
 
-  // const [workers, setWorkers] = useState(workerData);
-
   return (
-      <Deck />
+      <Deck data={data}/>
   )
 }
 

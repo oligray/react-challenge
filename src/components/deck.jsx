@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import { useSprings } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import Card from './card'
-import data from '../api/data'
 import { to, from, trans } from '../helpers/animations'
 
 import './deck.scss'
 
-function Deck() {
+function Deck(props) {
   const [cardsOffScreen] = useState(() => new Set());
-  const [springs, set] = useSprings(data.length, i => ({ ...to(i), from: from(i) }));
-  const [cardsList, setCardsList] = useState(data);
+  const [springs, set] = useSprings(props.data.length, i => ({ ...to(i), from: from(i) }));
+  const [cardsList, setCardsList] = useState(props.data);
     
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
   const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
