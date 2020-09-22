@@ -46,6 +46,7 @@ function Deck(props) {
   }
 
   return springs.map(({ x, y, rot, scale }, i) => (
+    // TODO: Group some of these parameters (e.g. transforms) into a parent object to simplify declaration
     <Card
       key={i}
       i={i}

@@ -2,11 +2,16 @@
 Tindr style apps can be built using `react-spring` and `react-use-gesture` and there are many examples available, which this challenge builds upon</br>
 With work focussing on providing a solution that works in the time provided and laying out the Project and Components into a logical fashion there are still areas which could be improved:
 
-* Expand tests, figure out how to simulate a gesture - the use of useState hook makes testing the state unadvisable
-* Implement hierarchy into the scss files.
+* To satisfy requirements there should be an immediate user feedback to a left or right drag (e.g. Liked!), not just a card update visible in the stack
+* Additional test, figure out how to simulate a gesture - the use of useState hook makes testing the state inadvisable
+* Implement hierarchy into the scss files
 * Add UI snapshot tests
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm install`
+
+Run to install dependencies
 
 ### `npm start`
 
