@@ -1,5 +1,5 @@
 import React from "react";
-import { string, number, array } from "prop-types";
+import { PropTypes } from "prop-types";
 import { animated, interpolate } from "react-spring";
 import './card.scss'
 
@@ -19,7 +19,7 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
           transform: interpolate([rot, scale], trans)
         }}
       >
-        <div className="card-content">
+        <div aria-label="profile" className="card-content">
           <h2>
             {role}  
             {liked ? 
@@ -27,10 +27,10 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
               <span role="img" aria-label="disliked"> 🙁</span>
             } 
           </h2>
-          <img draggable="false" src={picUrl} alt="actor pose" style={{align: 'center'}} />
-          <h2>{name}</h2>
-          <h5>{location}</h5>
-          <h5>Hourly rate {rate}</h5>
+          <img aria-label="headshot" draggable="false" src={picUrl} alt="actor pose" style={{align: 'center'}} />
+          <h2 aria-label="name">{name}</h2>
+          <h4 aria-label="location">{location}</h4>
+          <h5 aria-label="rate">Hourly rate {rate}</h5>
         </div>
       </animated.div>
     </animated.div>
@@ -38,11 +38,7 @@ const Card = ({ i, x, y, rot, scale, trans, bind, data }) => {
 };
 
 Card.propTypes = {
-  name: string,
-  role: string,
-  location: string,
-  rate: string,
-  picUrl: string
+  data: PropTypes.object.isRequired
 };
 
 export default Card;

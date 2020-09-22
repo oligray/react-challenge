@@ -1,8 +1,12 @@
+# Allbright coding challenge
+Tindr style apps can be built using `react-spring` and `react-use-gesture` and there are many examples available, which this challenge builds upon</br>
+With work focussing on providing a solution that works in the time provided and laying out the Project and Components into a logical fashion there are still areas which could be improved:
+
+* Expand tests, figure out how to simulate a gesture - the use of useState hook makes testing the state unadvisable
+* Implement hierarchy into the scss files.
+* Add UI snapshot tests
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 

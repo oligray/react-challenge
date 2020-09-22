@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { PropTypes } from "prop-types";
 import { useSprings } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import Card from './card'
@@ -31,14 +32,14 @@ function Deck(props) {
     if(!down) { resetCards() };
   });
 
-  function markCard(x, index) {
+  const markCard = (x, index) => {
       const tmpCardsList = [...cardsList];
       if (x > 0) { tmpCardsList[index].liked = true; }
       else if(x < 0) { tmpCardsList[index].liked = false; }
       setCardsList(tmpCardsList);
   }
 
-  function resetCards() {
+  const resetCards = () => {
     if (cardsOffScreen.size === cardsList.length) {
       setTimeout(() => cardsOffScreen.clear() || set(i => to(i)), 600);
     } 
@@ -58,6 +59,10 @@ function Deck(props) {
     />
   ));
 
-  }
+}
+
+Deck.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
   export default Deck;
